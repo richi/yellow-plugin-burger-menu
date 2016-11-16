@@ -1,0 +1,152 @@
+/* BurgerMenu Version: 0.1.6 */
+/* Source: https://github.com/richi/ */
+/* This file may be used and distributed under the terms of the public license. */
+
+/* menu look & feel */
+
+#burger-icon span {
+	background-color: #07d;
+}
+
+.burger-navigation a,
+.burger-navigation a:hover,
+.burger-navigation a.active {
+	color: #07d;
+}
+
+.burger-navigation {
+	padding: 20px 36px 20px 36px;
+	color: gray;
+	background-color: rgba(0, 0, 0, 0.82);
+	box-shadow: 0 10px 5px rgba(0, 0, 0, .5);
+	font-size: 1.5em;
+	line-height: 1;
+	text-align: center;
+	transition: opacity .3s linear;
+}
+
+.burger-navigation a,
+.burger-navigation a:hover,
+.burger-navigation a.active {
+	display: block;
+	margin: 0;
+	padding: 0.5em 0.5em;
+	border: 1px solid white;
+	background: none;
+	text-decoration: none;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.burger-navigation li:not(:last-child) > a {
+	border-bottom: none;
+}
+
+.burger-navigation a.active{
+	font-weight: bold;
+}	
+
+.burger-navigation ul {
+	display: block;
+	margin: 16px 0 16px 0;
+	padding: 0;
+	list-style: none;
+}
+
+.burger-navigation li {
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+.burger-navigation p {
+	margin-top: 16px;
+	margin-bottom: 16px;
+}
+
+/* icon */
+
+#burger-icon {
+	display: none;
+	z-index: 999999;
+	position: absolute;
+	top: 16px;
+	right: 16px;
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
+}
+
+#burger-icon span {
+	display: block;
+	position: absolute;
+	height: 8px;
+	width: 100%;
+	border-radius: 8px;
+	opacity: 1;
+	left: 0;
+	-webkit-transition: .3s ease-in-out;
+	-moz-transition: .3s ease-in-out;
+	-ms-transition: .3s ease-in-out;
+	-o-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+#burger-icon span:nth-child(1) {
+	top: 0;
+}
+
+#burger-icon span:nth-child(2) {
+	top: 16px;
+}
+
+#burger-icon span:nth-child(3) {
+	top: 32px;
+}
+
+/* icon animation */
+
+.burger-active #burger-icon span:nth-child(1) {
+	top: 16px;
+	-webkit-transform: rotate(135deg);
+	-moz-transform: rotate(135deg);
+	-ms-transform: rotate(135deg);
+	-o-transform: rotate(135deg);
+	transform: rotate(135deg);
+}
+
+.burger-active #burger-icon span:nth-child(2) {
+	opacity: 0;
+	left: -80px;
+}
+
+.burger-active #burger-icon span:nth-child(3) {
+	top: 16px;
+	-webkit-transform: rotate(-135deg);
+	-moz-transform: rotate(-135deg);
+	-ms-transform: rotate(-135deg);
+	-o-transform: rotate(-135deg);
+	transform: rotate(-135deg);
+}
+
+/* menu inactive */
+
+.burger-navigation {
+	display: none;
+	position: absolute; top: 0; bottom: 0; left: 0; right: 0;
+	margin: 0;
+	opacity: 0;
+	pointer-events: none;
+	overflow: hidden;
+}
+
+/* menu active */
+
+.burger-active .burger-navigation {
+	bottom: auto;
+	opacity: 1;
+	z-index: 999998;
+	pointer-events: all;
+}
+
