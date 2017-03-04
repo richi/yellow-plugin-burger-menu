@@ -1,4 +1,4 @@
-BurgerMenu plugin 0.1.6
+BurgerMenu plugin 0.1.7
 =======================
 
 On mobile devices, more and more sites feature a fixed-position icon that, when tapped, reveal a hidden navigation menu. This plugin enables a hamburger menu in the default themes that come together with Yellow.

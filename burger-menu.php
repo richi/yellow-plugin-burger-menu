@@ -5,7 +5,7 @@
 // BurgerMenu plugin
 class YellowBurgerMenu
 {
-	const VERSION = "0.1.6";
+	const VERSION = "0.1.7";
 	var $yellow;			//access to API
 	
 	// Handle initialisation
@@ -34,8 +34,7 @@ class YellowBurgerMenu
 				$output .= "<ul>\n";
 				foreach($pages as $page)
 				{
-					$output .= "<li><a ".($page->isActive() ? " class=\"active\"" : "")." href=\"".$page->getLocation()."\">".$page->getHtml("titleNavigation")."</a></li>\n";
-					//$output .= "<li><a href=\"".$page->getLocation()."\">".$page->getHtml("titleNavigation")."</a></li>\n";
+					$output .= "<li><a ".($page->isActive() ? " class=\"active\"" : "")." href=\"".$page->getLocation(true)."\">".$page->getHtml("titleNavigation")."</a></li>\n";
 				}
 				$output .= "</ul>\n";
 			} 
